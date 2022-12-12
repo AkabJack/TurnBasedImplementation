@@ -1,11 +1,13 @@
 package jpp.gametheory.generic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player<C extends IChoice> implements IPlayer<C> {
     private String name;
     private IStrategy strategie;
-    
+    ArrayList<GameRound> rundeJucate;
+
     public Player(String name, IStrategy<C> strategy) {
         this.name = name;
         this.strategie = strategy;
@@ -28,7 +30,11 @@ public class Player<C extends IChoice> implements IPlayer<C> {
 
     @Override
     public int compareTo(IPlayer<C> o) {
-        throw new UnsupportedOperationException();
+        // https://www.w3schools.com/java/ref_string_compareto.asp
+        int comparatie = this.name.compareTo(o.getName());
+        if(comparatie == 0) return 0;
+        else if (comparatie < 0) return -1; 
+        else return 1;
     }
 
     @Override
