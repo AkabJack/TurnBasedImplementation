@@ -1,10 +1,12 @@
 package jpp.gametheory.generic;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 public class GameRound<C extends IChoice> implements IGameRound<C> {
-
+    Map<String,String> alege = new HashMap<String,String>();
+    
     public GameRound(Map<IPlayer<C>, C> playerChoices) {
         throw new UnsupportedOperationException();
     }
