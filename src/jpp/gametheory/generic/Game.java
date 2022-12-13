@@ -15,7 +15,16 @@ public class Game<C extends IChoice> {
     }
 
     public IGameRound<C> playRound() {
-        throw new UnsupportedOperationException();
+        Map<String,String> mutare = new HashMap<String,String>();
+        String data = "";
+        Scanner consola = new Scanner(System.in);
+
+        for(IPlayer jucator : jucatori){
+            System.out.println("E randul lui: " + jucator.getName());
+            data = consola.nextLine();
+            mutare.put(jucator.getName(), data);
+        }
+        //TODO Rezolva asta
     }
 
     public void playNRounds(int n) {

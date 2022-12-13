@@ -1,12 +1,10 @@
 package jpp.gametheory.generic;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Player<C extends IChoice> implements IPlayer<C> {
     private String name;
     private IStrategy strategie;
-    ArrayList<GameRound> rundeJucate;
 
     public Player(String name, IStrategy<C> strategy) {
         this.name = name;
@@ -25,7 +23,7 @@ public class Player<C extends IChoice> implements IPlayer<C> {
 
     @Override
     public C getChoice(List<IGameRound<C>> previousRounds) {
-        throw new UnsupportedOperationException();
+       return null;
     }
 
     @Override
@@ -39,16 +37,22 @@ public class Player<C extends IChoice> implements IPlayer<C> {
 
     @Override
     public boolean equals(Object o) {
-        throw new UnsupportedOperationException();
+        if(this == o){
+            return true; 
+        }
+        else return  false;
     }
 
     @Override
     public int hashCode() {
-        throw new UnsupportedOperationException();
-    }
+        return name.hashCode();//TODO lucreaza la asta
+    }   
 
     @Override
     public String toString() {
-        throw new UnsupportedOperationException();
+        /*
+         * Last in, first out (LIFO) is a method used to account for inventory that records the most recently produced items as sold first.
+         */
+        return name;
     }
 }
